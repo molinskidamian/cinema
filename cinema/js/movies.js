@@ -1,37 +1,28 @@
 (function () {
   const moviesList = document.querySelector('.moviesList');
-  // movies.forEach((movie) => {
-  //   //
+  const cards = [];
 
-  //   // img.setAttribute('src', movie.Images[0]);
-  //   // card.appendChild(img);
-  //   const card = document.querySelector('.card');
-  //   const img = card.querySelector('img');
-  //   img.setAttribute('src', movie.Images[0]);
-
-  //   card.appendChild(img);
-
-  //   moviesList.appendChild(card);
-  // });
-
-  function createMovieCard(imgSrc) {
+  for (let i = 0; i < movies.length; i++) {
     const card = document.createElement('div');
     card.classList.add('card');
     card.setAttribute('style', 'width: 18rem');
 
     const img = document.createElement('img');
-    img.setAttribute('src', imgSrc);
+    img.setAttribute('src', movies[i].Images[0]);
+    // img.setAttribute('src', '#');
     img.classList.add('card-img-top');
     img.setAttribute('alt', 'picture name');
 
     card.appendChild(img);
 
     const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
     card.appendChild(cardBody);
 
-    const h5 = document.createElement('h5');
-    h5.classList.add('card-title');
-    cardBody.appendChild(h5);
+    const cardTitle = document.createElement('h5');
+    cardTitle.innerHTML = movies[i].Title;
+    cardTitle.classList.add('card-title');
+    cardBody.appendChild(cardTitle);
 
     const cardText = document.createElement('p');
     cardText.classList.add('card-text');
@@ -61,11 +52,7 @@
 
     cardFooter.appendChild(link2);
 
-    return card;
-  }
-
-  for (let i = 0; i < movies.length; i++) {
-    const card = createMovieCard('lol');
     moviesList.appendChild(card);
+    cards.push(card);
   }
 }());
