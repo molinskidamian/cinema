@@ -4,7 +4,7 @@
 
   for (let i = 0; i < movies.length; i++) {
     const card = document.createElement('div');
-    card.classList.add('card');
+    card.classList.add('card', 'col-md-4', 'col-lg-4');
     card.setAttribute('style', 'width: 18rem');
 
     const img = document.createElement('img');
@@ -21,6 +21,7 @@
 
     const cardTitle = document.createElement('h5');
     cardTitle.innerHTML = movies[i].Title;
+
     cardTitle.classList.add('card-title');
     cardBody.appendChild(cardTitle);
 
