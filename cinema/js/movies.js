@@ -2,7 +2,7 @@
   const moviesList = document.querySelector('.moviesList');
   const cards = [];
 
-  for (let i = 0; i < movies.length; i++) {
+  for (let i = 0; i < movies.length; i + 1) {
     const card = document.createElement('div');
     card.classList.add('card', 'col-md-4', 'col-lg-4');
     card.setAttribute('style', 'width: 18rem');
@@ -32,6 +32,9 @@
     const actorsList = document.createElement('ul');
     actorsList.classList.add('actorsList', 'list-group', 'list-group-flush');
     card.appendChild(actorsList);
+
+    //  add actors
+    console.log(`Lista aktorów: ${movies.Actors}`);
 
     const cardFooter = document.createElement('div');
     cardFooter.classList.add('card-body');
